@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#define N 3000
+  int main()
+  {
+      int a[N];
+      int n, i, j, c, s;
+     memset(a, 0, sizeof(a));
+     scanf("%d", &n);
+     a[0] = 1;
+   for (i = 2; i <= n; i++)
+     {    c = 0;
+        for (j = 0; j < N; j++)
+         {s=a[j]*i+ c;
+            a[j]=s % 10;
+            c=s/10;}}
+    for (i=N-1;i>=0;i--)
+     {  if (a[i])
+        {break;}  }
+     for (j = i; j >= 0; j--)
+     {printf("%d", a[j]);}
+     return 0;
+ }
